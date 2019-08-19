@@ -4,7 +4,7 @@ registerOption((siteSettings, opts) => {
   opts.features["bbcode-hideto"] = true;
 });
 
-function replaceContentHide(text) {
+/*function replaceContentHide(text) {
   text = text || "";
   while (
     text !==
@@ -16,7 +16,7 @@ function replaceContentHide(text) {
     ))
   );
   return text;
-}
+}*/
 
 export function setup(helper) {
   helper.whiteList({
