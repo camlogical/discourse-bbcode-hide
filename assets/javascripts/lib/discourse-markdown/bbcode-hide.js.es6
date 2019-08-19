@@ -9,7 +9,7 @@ const ContentHide = {
   before: function(state, tagInfo) {
     let token = state.push('div_open', 'div', 1);
     token.attrs = [];
-    token.attrs.push(['class', 'hideto guest']);
+    token.attrs.push([['class', 'hideto '+ tagInfo.attrs['_default']]]);
   },
   after: function(state) {
     state.push('div_close', 'div', -1);
