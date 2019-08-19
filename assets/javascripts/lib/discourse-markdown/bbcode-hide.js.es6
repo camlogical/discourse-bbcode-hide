@@ -22,7 +22,7 @@ export function setup(helper) {
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === "div" && name === "class") {
-        return "hide" +/^?[a-zA-Z0-9]+$/.exec(value);
+        return /^hide ?[a-zA-Z0-9]+$/.exec(value);
       }
     }
   });
@@ -36,12 +36,14 @@ export function setup(helper) {
         wrap: function(token, endToken, tagInfo) {
           token.type = "div_open";
           token.tag = "div";
-          token.attrs = [["hide", "hide" + tagInfo.attrs._default]];
+          token.attrs = [
+            ["class", "hide " + tagInfo.attrs._default.trim()]
+          ];
           token.content = "";
           token.nesting = 1;
 
-          endToken.type = "div_close";
-          endToken.tag = "div";
+          endToken.type = "hide_close";
+          endToken.tag = "hide";
           endToken.nesting = -1;
           endToken.content = "";
         }
