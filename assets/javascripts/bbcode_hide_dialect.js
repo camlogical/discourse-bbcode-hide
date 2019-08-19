@@ -1,6 +1,6 @@
 (function() {
-  function replaceFontBgColor (text) {
-      while (text !== (text = text.replace(/\[hide=([^\]]+)\]((?:(?!\[hide=[^\]]+\]|\[\/hide\])[\S\s])*)\[\/hide\]/ig, function (match, p1, p2) {
+  function replaceContentHide (text) {
+      while (text !== (text = text.replace(/\[hideto=([^\]]+)\]((?:(?!\[hideto=[^\]]+\]|\[\/hideto\])[\S\s])*)\[\/hideto\]/ig, function (match, p1, p2) {
         return "<div class='hideto " + p1 + "'>" + p2 + "</div>";
       })));
       return text;
