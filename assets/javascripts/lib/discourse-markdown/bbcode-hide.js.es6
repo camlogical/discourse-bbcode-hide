@@ -9,7 +9,7 @@ function ContentHide(state, silent) {
     after: function(state) {
         state.push('div_close', 'div', -1);
      }
-})
+});
 }
 
 export function setup(helper) {
@@ -21,6 +21,6 @@ export function setup(helper) {
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
 
   helper.registerPlugin( md => {
-    md.block.push("hideto", ContentHide);
+    md.block.bbcode.ruler.push("hideto", ContentHide);
   });
 }
