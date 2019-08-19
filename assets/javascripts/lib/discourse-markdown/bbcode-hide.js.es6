@@ -16,6 +16,13 @@ export function setup(helper) {
    });
   helper.whiteList(['div[class]']);
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
+  helper.whiteList({
+    custom(tag, name, value) {
+      if (tag === "div" && name === "class") {
+        return /^hideto ?[a-zA-Z0-9]+$/.exec(value);
+      }
+    }
+  });
 
   helper.registerPlugin( md => {
     md.block.bbcode.ruler.push("hideto", ContentHide);
