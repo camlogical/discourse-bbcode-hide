@@ -1,15 +1,12 @@
 function ContentHide(state, silent) {
    // standard markdown it inline extension goes here.
-  md.block.bbcode.ruler.push('hideto', {
-    tag: 'hideto',
-    before: function(state, tagInfo, token) {
-        state.push('div_open', 'div', 1);
-       token.attrs.push = (['class', tagInfo.attrs['_default']]);
-    },
-    after: function(state) {
-        state.push('div_close', 'div', -1);
-     }
-});
+    md.block.bbcode.ruler.push('hideto', {
+      tag: 'hideto',
+      wrap: function(token, tagInfo) {
+         token.attrs = [['class', tagInfo.attrs['_default']]];
+         return true;
+      }
+   });
 }
 
 export function setup(helper) {
