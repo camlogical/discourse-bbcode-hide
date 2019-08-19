@@ -1,15 +1,15 @@
 discourse-bbcode-hide
 ======================
 
-A Discourse Plugin to support BBCode hide tags.
+A Discourse Plugin to support BBCode hideto tags.
 
 Usage
 =====
 
-In your posts, surround text with `[hide=...]` and `[/hide]`. hide values are those supported by HTML, like `guest` and `group`. For example:
+In your posts, surround text with `[hideto=...]` and `[/hideto]`. hide values are those supported by HTML, like `guest` and `group`. For example:
 
 ```
-Look at my [hide=guest]Hide content for guest words[/hide] and be amazed!
+Look at my [hideto=guest]Hide content for guest words[/hideto] and be amazed!
 
 ```
 
