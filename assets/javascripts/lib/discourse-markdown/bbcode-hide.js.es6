@@ -11,7 +11,7 @@ function ContentHide(state, silent) {
 export function setup(helper) {
   if(!helper.markdownIt) { return; }
   helper.registerOptions((opts,siteSettings)=>{
-      opts.features.['my_extension'] = !!siteSettings.my_extension_enabled;
+      opts.features.bbcode_hide = !!siteSettings.bbcode_hide_enabled;
    });
   helper.whiteList(['div[class]']);
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
