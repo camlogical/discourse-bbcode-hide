@@ -15,7 +15,7 @@ export function setup(helper) {
       opts.features.bbcode_hide = !!siteSettings.bbcode_hide_enabled;
    });
   helper.whiteList(['div[class]']);
-  helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
+  helper.whiteList(['div.hideto']);
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === "div" && name === "class") {
