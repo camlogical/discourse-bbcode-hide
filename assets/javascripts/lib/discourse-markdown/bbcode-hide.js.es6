@@ -25,6 +25,6 @@ export function setup(helper) {
   });
 
   helper.registerPlugin( md => {
-    md.block.bbcode.ruler.push("hideto", ContentHide);
+    md.block.push("hideto", ContentHide);
   });
 }
