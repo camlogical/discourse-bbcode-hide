@@ -1,3 +1,4 @@
+Hide Content V1.js
 import { registerOption } from "pretty-text/pretty-text";
 
 registerOption((siteSettings, opts) => {
@@ -33,9 +34,20 @@ export function setup(helper) {
 
       ruler.push("hideto", {
         tag: "hideto",
-        wrap: function(token, tagInfo) {
-      token.attrs = [['class', 'hideto '+ tagInfo.attrs['_default']]];
-       }
+        wrap: function(token, endToken, tagInfo) {
+          token.type = "div_open";
+          token.tag = "div";
+          token.attrs = [
+            ["class", "hideto " + tagInfo.attrs._default.trim()]
+          ];
+          token.content = "";
+          token.nesting = 1;
+
+          endToken.type = "div_close";
+          endToken.tag = "div";
+          endToken.nesting = -1;
+          endToken.content = "";
+        }
       });
     });
   } else {
