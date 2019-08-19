@@ -29,7 +29,7 @@ export function setup(helper) {
 
   if (helper.markdownIt) {
     helper.registerPlugin(md => {
-      const ruler = md.inline.bbcode.ruler;
+      const ruler = md.block.bbcode.ruler;
 
       ruler.push("hideto", {
         tag: "hideto",
