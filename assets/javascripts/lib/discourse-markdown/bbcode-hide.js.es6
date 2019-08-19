@@ -52,6 +52,6 @@ export function setup(helper) {
     return;
   }
   replaceBBCode("hideto", contents =>
-    ["div", { class: "hideto" }].concat(contents)
+    ["div", { class: "hideto guest" }].concat(contents)
   );
 }
