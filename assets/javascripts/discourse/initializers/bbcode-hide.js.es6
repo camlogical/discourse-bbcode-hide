@@ -38,6 +38,9 @@ export function setup(helper) {
           endToken.content = "";
         }
       });
-
-  helper.addPreProcessor(text => replaceHide(text));
+    });
+  }
+  else {
+  	helper.addPreProcessor(text => replaceHide(text));
+	}
 }
