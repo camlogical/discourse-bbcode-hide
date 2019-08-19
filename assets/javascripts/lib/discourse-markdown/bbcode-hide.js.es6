@@ -33,19 +33,10 @@ export function setup(helper) {
 
       ruler.push("hideto", {
         tag: "hideto",
-        wrap: function(token, endToken, tagInfo) {
-          token.type = "div_open";
-          token.tag = "div";
+          wrap: function(token, tagInfo) {
           token.attrs = [
             ["class", "hideto " + tagInfo.attrs._default.trim()]
           ];
-          token.content = "";
-          token.nesting = 1;
-
-          endToken.type = "div_close";
-          endToken.tag = "div";
-          endToken.nesting = -1;
-          endToken.content = "";
         }
       });
     });
