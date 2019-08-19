@@ -42,8 +42,8 @@ export function setup(helper) {
           token.content = "";
           token.nesting = 1;
 
-          endToken.type = "hide_close";
-          endToken.tag = "hide";
+          endToken.type = "div_close";
+          endToken.tag = "div";
           endToken.nesting = -1;
           endToken.content = "";
         }
