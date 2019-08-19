@@ -4,7 +4,7 @@ registerOption((siteSettings, opts) => {
   opts.features["bbcode-hideto"] = true;
 });
 
-const rulesForCallout = {
+const ContentHide = {
   tag: 'hideto',
   before: function(state, tagInfo) {
     let token = state.push('div_open', 'div', 1);
