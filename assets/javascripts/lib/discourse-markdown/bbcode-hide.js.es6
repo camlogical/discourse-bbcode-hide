@@ -3,7 +3,7 @@ function ContentHide(state, silent) {
     md.block.bbcode.ruler.push('hideto', {
       tag: 'hideto',
       wrap: function(token, tagInfo) {
-         token.attrs = [['class', tagInfo.attrs['_default']]];
+         token.attrs = [['class','hideto '+ tagInfo.attrs['_default']]];
          return true;
       }
    });
