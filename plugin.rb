@@ -5,6 +5,5 @@
 # version: 0.2
 # authors: To Trieu
 # url: https://github.com/tohaitrieu/discourse-bbcode-hide/
-register_asset "javascripts/bbcode_hide_dialect.js", :server_side
 
 register_asset "stylesheets/bbcode_hide.scss"
