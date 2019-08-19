@@ -1,9 +1,9 @@
 function ContentHide(state, silent) {
    // standard markdown it inline extension goes here.
-  md.block.bbcode.ruler.push('money', {
-   tag: 'money',
+  md.block.bbcode.ruler.push('hideto', {
+   tag: 'hideto',
    wrap: function(token, tagInfo) {
-      token.attrs = [['data-money', tagInfo.attrs['_default']]];
+      token.attrs = [['class', tagInfo.attrs['_default']]];
    }
   });
 }
@@ -17,6 +17,6 @@ export function setup(helper) {
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
 
   helper.registerPlugin( md => {
-    md.block.bbcode.ruler.push("hideto", ContentHide);
+    md.block.push("hideto", ContentHide);
   });
 }
