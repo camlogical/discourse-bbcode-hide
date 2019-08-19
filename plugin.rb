@@ -1,4 +1,7 @@
-# name: Discourse Content Hide
-# about: A simple plugin hide content from guest
-# version: 1.0.0
+# frozen_string_literal: true
+
+# name: discourse-bbcode-hide
+# about: A Discourse plugin to support BBCode hide tags.
+# version: 0.2
 # authors: To Trieu
+# url: https://github.com/tohaitrieu/discourse-bbcode-hide/
