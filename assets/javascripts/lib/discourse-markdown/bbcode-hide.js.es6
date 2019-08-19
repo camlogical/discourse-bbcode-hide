@@ -18,7 +18,7 @@ function ContentHide(state, silent) {
 
 export function setup(helper) {
   if(!helper.markdownIt) { return; }
-
+  helper.whiteList(['div[class]']);
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
 
   helper.registerPlugin( md => {
