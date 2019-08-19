@@ -1,3 +1,8 @@
+import { registerOption } from "pretty-text/pretty-text";
+
+registerOption(
+  (siteSettings, opts) => (opts.features["bbcode-hide"] = true)
+);
 function ContentHide(state, silent) {
    // standard markdown it inline extension goes here.
     md.block.bbcode.ruler.push('hideto', {
@@ -11,9 +16,6 @@ function ContentHide(state, silent) {
 
 export function setup(helper) {
   if(!helper.markdownIt) { return; }
-  helper.registerOptions((opts,siteSettings)=>{
-      opts.features.bbcode_hide = !!siteSettings.bbcode_hide_enabled;
-   });
   helper.whiteList(['div[class]']);
   helper.whiteList(['div.hideto']);
   helper.whiteList({
