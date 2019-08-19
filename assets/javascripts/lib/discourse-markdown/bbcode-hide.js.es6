@@ -35,7 +35,6 @@ export function setup(helper) {
         tag: "hideto",
         wrap: function(token, tagInfo) {
       token.attrs = [['class', 'hideto '+ tagInfo.attrs['_default']]];
-      return true;
        }
       });
     });
