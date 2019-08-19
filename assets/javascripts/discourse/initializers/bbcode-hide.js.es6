@@ -29,13 +29,8 @@ export function setup(helper) {
           token.attrs = [
             ["class", "hide " + tagInfo.attrs['_default']]
           ];
-          token.content = "";
-          token.nesting = 1;
-
           endToken.type = "div_close";
           endToken.tag = "div";
-          endToken.nesting = -1;
-          endToken.content = "";
         }
       });
     });
