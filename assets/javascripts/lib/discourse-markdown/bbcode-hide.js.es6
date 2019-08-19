@@ -4,7 +4,7 @@ function ContentHide(state, silent) {
     tag: 'hideto',
     before: function(state, tagInfo, token) {
         state.push('div_open', 'div', 1);
-       token.attrs.push = ([['class', tagInfo.attrs['_default']]]);
+       token.attrs.push = (['class', tagInfo.attrs['_default']]);
     },
     after: function(state) {
         state.push('div_close', 'div', -1);
