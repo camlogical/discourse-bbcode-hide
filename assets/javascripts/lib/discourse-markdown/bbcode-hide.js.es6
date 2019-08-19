@@ -37,11 +37,11 @@ export function setup(helper) {
 
   helper.whiteList({
     custom(tag, name, value) {
-      if (tag === "span" && name === "style") {
-        return /^font-size:.*|background-color:#?[a-zA-Z0-9]+$/.exec(value);
+      if (tag === "div" && name === "class") {
+        return /^hideto ?[a-zA-Z0-9]+$/.exec(value);
       }
 
-      if (tag === "div" && name === "class") {
+      if (tag === "span" && name === "class") {
         return /^hideto $/.exec(value);
       }
     }
