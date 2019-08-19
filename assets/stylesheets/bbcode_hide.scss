@@ -1,11 +1,11 @@
 
-.cooked .hide {
+.anon .cooked .hide {
   display: block;
   position: relative;
   min-height: 20px;
 }
 
-.cooked .hide.guest::before {
+.anon .cooked .hide.guest::before {
   display: block;
   position: absolute;
   left: 0;
