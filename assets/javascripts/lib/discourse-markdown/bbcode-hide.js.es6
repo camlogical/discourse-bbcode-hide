@@ -1,7 +1,7 @@
 import { registerOption } from "pretty-text/pretty-text";
 
 registerOption((siteSettings, opts) => {
-  opts.features["bbcode-hide"] = true;
+  opts.features["bbcode-hideto"] = true;
 });
 
 function replaceContentHide(text) {
@@ -9,7 +9,7 @@ function replaceContentHide(text) {
   while (
     text !==
     (text = text.replace(
-      /\[hide=([^\]]+)\]((?:(?!\[hide=[^\]]+\]|\[\/hide\])[\S\s])*)\[\/hide\]/gi,
+      /\[hideto=([^\]]+)\]((?:(?!\[hideto=[^\]]+\]|\[\/hideto\])[\S\s])*)\[\/hideto\]/gi,
       function(match, p1, p2) {
         return `<div class='hideto ${p1}'>${p2}</div>`;
       }
@@ -31,8 +31,8 @@ export function setup(helper) {
     helper.registerPlugin(md => {
       const ruler = md.inline.bbcode.ruler;
 
-      ruler.push("hide", {
-        tag: "hide",
+      ruler.push("hideto", {
+        tag: "hideto",
         wrap: function(token, endToken, tagInfo) {
           token.type = "div_open";
           token.tag = "div";
