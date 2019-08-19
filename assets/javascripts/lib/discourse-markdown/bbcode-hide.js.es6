@@ -22,6 +22,6 @@ export function setup(helper) {
   helper.whiteList(['div.hideto', 'div.guest', 'div.hideto.guest']);
 
   helper.registerPlugin( md => {
-    md.inline.push('hideto', ContentHide);
+    md.block.bbcode.ruler.push("hideto", ContentHide);
   });
 }
