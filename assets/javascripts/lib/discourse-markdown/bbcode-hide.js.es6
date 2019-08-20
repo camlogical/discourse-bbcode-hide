@@ -19,7 +19,7 @@ export function setup(helper) {
   if(!helper.markdownIt) { return; }
   helper.whiteList(
     ['div.hideto', 'div.guest']
-  });
+  );
   helper.whiteList(['div[class]']);
   helper.registerPlugin(md=>{
       md.inline.push('hideto', HideContent);
