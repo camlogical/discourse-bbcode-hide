@@ -4,30 +4,24 @@ registerOption((siteSettings, opts) => {
   opts.features["bbcode-hideto"] = true;
 });
 
-function HideContent(state, silent) {
+function HideContent() {
    // standard markdown it inline extension goes here.
   md.block.bbcode.ruler.push('hideto', {
    tag: 'hideto',
    wrap: function(token, tagInfo) {
       token.attrs = [['class', 'hideto ' +tagInfo.attrs['_default']]];
-      return true;
    }
-});
-   return false;
+  });
 }
 
 
 export function setup(helper) {
   if(!helper.markdownIt) { return; }
-  helper.whiteList({
-    custom(tag, name, value) {
-      if (tag === "div" && name === "class") {
-        return /^hideto ?[a-zA-Z0-9]+$/.exec(value);
-      }
-    }
+  helper.whiteList(
+    ['div.hideto', 'div.guest']
   });
-helper.registerPlugin(md=>{
+  helper.whiteList(['div[class]']);
+  helper.registerPlugin(md=>{
       md.inline.push('hideto', HideContent);
    });
-  
 }
