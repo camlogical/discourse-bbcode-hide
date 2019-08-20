@@ -22,7 +22,7 @@ function wrap(tag, attr, callback) {
 }
 
 function setupMarkdownIt(md) {
-  const ruler = md.inline.bbcode.ruler;
+  const ruler = md.block.bbcode.ruler;
 
   ruler.push("hideto", {
     tag: "hideto",
