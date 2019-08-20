@@ -11,7 +11,7 @@ function HideContent(text) {
     (text = text.replace(
       /\[hideto=([^\]]+)\]((?:(?!\[hideto=[^\]]+\]|\[\/hideto\])[\S\s])*)\[\/hideto\]/gi,
       function(match, p1, p2) {
-        return '<div class="hide_to '+${p1}+'">'+${p2}+'</div>';
+        return '<div class="hide_to ${p1}">${p2}</div>';
       }
     ))
   );
