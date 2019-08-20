@@ -7,4 +7,4 @@
 # url: https://github.com/tohaitrieu/discourse-bbcode-hide/
 
 register_asset "stylesheets/bbcode_hide.scss"
-register_asset "javascripts/bbcode_hide_dialect.js"
+register_asset "javascripts/bbcode_hide_dialect.js", :server_side
