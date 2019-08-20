@@ -27,7 +27,7 @@ export function setup(helper) {
     }
   });
 helper.registerPlugin(md=>{
-      md.inline.push('amazing', HideContent);
+      md.inline.push('hideto', HideContent);
    });
   
 }
