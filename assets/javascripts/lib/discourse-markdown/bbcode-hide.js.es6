@@ -11,7 +11,7 @@ function HideContent(text) {
     (text = text.replace(
       /\[hideto=([^\]]+)\]((?:(?!\[hideto=[^\]]+\]|\[\/hideto\])[\S\s])*)\[\/hideto\]/gi,
       function(match, p1, p2) {
-        return '<div class="hideto ${p1}">${p2}</div>';
+        return '<div class="hide_to ${p1}">${p2}</div>';
       }
     ))
   );
@@ -23,7 +23,7 @@ export function setup(helper) {
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === "div" && name === "class") {
-        return /^hideto ?[a-zA-Z0-9]+$/.exec(value);
+        return /^hide_to ?[a-zA-Z0-9]+$/.exec(value);
       }
     }
   });
@@ -38,7 +38,7 @@ export function setup(helper) {
           token.type = "div";
           token.tag = "div";
           token.attrs = [
-            ["class", "hideto " + tagInfo.attrs._default.trim()]
+            ["class", "hide_to " + tagInfo.attrs._default.trim()]
           ];
           token.content = "";
           token.nesting = 1;
