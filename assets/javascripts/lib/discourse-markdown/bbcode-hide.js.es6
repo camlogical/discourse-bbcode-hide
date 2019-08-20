@@ -1,4 +1,3 @@
-Hide Content V1.js
 import { registerOption } from "pretty-text/pretty-text";
 
 registerOption((siteSettings, opts) => {
