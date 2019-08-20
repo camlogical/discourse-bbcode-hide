@@ -6,7 +6,7 @@
     (text = text.replace(
       /\[hideto=([^\]]+)\]((?:(?!\[hideto=[^\]]+\]|\[\/hideto\])[\S\s])*)\[\/hideto\]/gi,
       function(match, p1, p2) {
-        return "<div class='hideto ${p1}'>${p2}</div>;
+        return '<div class="hideto ${p1}">${p2}</div>';
       }
     ))
   );
