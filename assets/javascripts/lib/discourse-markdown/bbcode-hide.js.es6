@@ -35,7 +35,7 @@ export function setup(helper) {
       ruler.push("hideto", {
         tag: "hideto",
         wrap: function(token, endToken, tagInfo) {
-          token.type = "div";
+          token.type = "div_open";
           token.tag = "div";
           token.attrs = [
             ["class", "hide_to " + tagInfo.attrs._default.trim()]
