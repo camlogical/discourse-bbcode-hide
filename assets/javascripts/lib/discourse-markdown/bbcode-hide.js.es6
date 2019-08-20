@@ -19,7 +19,7 @@ function HideContent(text) {
 }
 
 export function setup(helper) {
-  helper.whiteList(["font[color]"]);
+  helper.whiteList(['div[class]']);
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === "div" && name === "class") {
